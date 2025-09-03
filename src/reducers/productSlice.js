@@ -93,7 +93,7 @@ export const productsSlice = createSlice({
       })
       .addCase(editProduct.fulfilled, (state, action) => {
         const index = state.items.findIndex(
-          (book) => book.id === action.payload.id
+          (product) => product.id === action.payload.id
         );
 
         if (index !== -1) {
