@@ -12,7 +12,9 @@ export const fetchProducts = createAsyncThunk(
   "products/fetchProducts",
   async () => {
     try {
-      const response = await axios.get("http://localhost:9000/products");
+      const response = await axios.get(
+        "https://6a2bd1103e2b60ab038edf6e.mockapi.io/api/v1/products"
+      );
       return response.data;
     } catch (err) {
       console.log(err);
@@ -25,7 +27,7 @@ export const deleteProduct = createAsyncThunk(
   async (productId) => {
     try {
       const response = await axios.delete(
-        `http://localhost:9000/products/${productId}`
+        `https://6a2bd1103e2b60ab038edf6e.mockapi.io/api/v1/products/${productId}`
       );
       return response.data;
     } catch (error) {
@@ -39,7 +41,7 @@ export const editProduct = createAsyncThunk(
   async (initialProduct) => {
     try {
       const response = await axios.put(
-        `http://localhost:9000/products/${initialProduct.id}`,
+        `https://6a2bd1103e2b60ab038edf6e.mockapi.io/api/v1/products/${initialProduct.id}`,
         initialProduct
       );
       return response.data;
@@ -54,7 +56,7 @@ export const addProduct = createAsyncThunk(
   async (initialProduct) => {
     try {
       const response = await axios.post(
-        "http://localhost:9000/products",
+        "https://6a2bd1103e2b60ab038edf6e.mockapi.io/api/v1/products",
         initialProduct
       );
       return response.data;
